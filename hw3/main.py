@@ -30,13 +30,22 @@ def main() -> None:
     #     print(y)
     #     print(f"{y.shape}\n")
 
-    network = [Layer(1, 3), Layer(3, 2), Layer(2, 1)]
-    for x in train_dfs_xs:
-        inp = x
-        for layer in network:
-            inp = layer.forward(inp)
-            print(inp)
-        print("\n")
+    slp = [Layer(1, 1, is_output=True)]
+    mlp_2 = [Layer(1, 2), Layer(2, 1, is_output=True)]
+    mlp_3 = [Layer(1, 3), Layer(3, 1, is_output=True)]
+    mlp_5 = [Layer(1, 5), Layer(5, 1, is_output=True)]
+    mlp_10 = [Layer(1, 10), Layer(10, 1, is_output=True)]
+
+    networks = [slp, mlp_2, mlp_3, mlp_5, mlp_10]
+    # network = [Layer(1, 3), Layer(3, 2), Layer(2, 1, is_output=True)]
+    for network in networks:
+        for x in train_dfs_xs:
+            inp = x
+            for layer in network:
+                inp = layer.forward(inp)
+                print(inp)
+            print("\n")
+            break
 
 
 if __name__ == "__main__":
