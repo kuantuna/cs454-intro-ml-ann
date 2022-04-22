@@ -13,9 +13,9 @@ class Layer():
         """Number of output neurons"""
         self.output_size: int = output_size
 
-        """shape: input_size x output_size"""
+        """shape: input_size x output_size (matrix)"""
         self.weights = np.random.randn(input_size, output_size)
-        """shape: output_size x 1"""
+        """shape: output_size x 1 (vector)"""
         self.bias = np.random.randn(output_size, 1)
 
         self.activation: Callable = activation
