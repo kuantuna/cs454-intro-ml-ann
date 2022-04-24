@@ -1,6 +1,5 @@
 from typing import Callable
 import numpy as np
-np.random.seed(0)
 
 
 def mse(y_true, y_pred):
