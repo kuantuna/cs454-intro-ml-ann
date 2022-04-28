@@ -76,7 +76,7 @@ def main() -> None:
     network_names = ["slp", "mlp_2", "mlp_3", "mlp_5", "mlp_10"]
     networks = [slp, mlp_2, mlp_3, mlp_5, mlp_10]
 
-    epochs = 10
+    epochs = 1000
     learning_rate = 0.001
     outputs = {name: {i+1: {"x": [], "y": [], "error": 0.0}
                       for i in range(10)} for name in network_names}
